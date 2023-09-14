@@ -21,7 +21,8 @@
 
 </div>
 {% if results %}
-    <table border="2">
+<div class="container my-5">
+    <table style = "width: 100%" border="3">
             {% for stewardesses in results %}
     <tr>
         <th>Nr_ewidencyjny</th>
@@ -42,9 +43,12 @@
             {% endfor %}
 
 </table>
+</div>
 
 {% else %}
+<div class="container my-5">
     <p>Nie znaleziono wyników</p>
+</div>
 
 {% endif %}
 
