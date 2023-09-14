@@ -1,0 +1,48 @@
+@import url(https://uk.allfont.net/allfont.css?fonts=open-sans);
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Arimo:400,400italic|Playfair + Display + SC:400,700&subset=latin,cyrillic');
+.card {
+  border-radius: 1em;
+  text-align: center;
+  padding: 1em;
+  }
+
+.card:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.card img {
+  border-radius: 50%;
+  width: 60%;
+  margin: auto;
+}
+p {
+  font-family: 'Chakra Petch', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  color: #171717;
+  text-decoration: none;
+}
+.d-block:hover {
+  transition: transform 0.3s ease;
+  transform: scale(1.2);
+}
+.nav-item,
+.nav-item active {
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.nav-link {
+  font-family: 'Playfair Display SC', serif;
+
+}
+table {
+       width: 100%;
+       border-collapse: collapse; /* Рекомендовано для відображення границь між комірками. */
+       }
+
+th, td {
+       border: 1px solid #ddd; /* Додайте границі для заголовків і комірок. */
+       padding: 8px;
+       text-align: left; /* Вирівнювання тексту по лівому краю. */
+        }

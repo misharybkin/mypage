@@ -1,0 +1,14 @@
+{% if results %}
+    <ul>
+    {% for stewardesses in results %}
+        <li><h5>Numer ewidencyjny to:</h5>{{ stewardesses.nr_ewidencyjny }}</li>
+        <li><h5>Imię:</h5>{{ stewardesses.imie }}</li>
+        <li><h5>Nazwisko:</h5>{{ stewardesses.nazwisko }}</li>
+        <li><h5>Crewlink_id to:</h5>{{ stewardesses.crewlink_id }}</li>
+        <li><h5>Hasło do CrewLink to:</h5>{{ stewardesses.crewlink_password }}</li>
+        <li><h5>Hasło domenowe to:</h5>{{ stewardesses.LOT_password }}</li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>Nie znaleziono wyników</p>
+{% endif %}

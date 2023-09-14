@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block title %}On-boarding stewek{% endblock %}
+<head>{% load static %}
+<link href="{% static 'style.css'%}" rel="stylesheet">
+
+</head>
+{% block content %}
+
+
+<div class="container my-5">
+    <h1>
+        Witamy w wygodnej wyszukiwarce stewardess!
+    </h1>
+    <h3>Wpisz numer ewidencyjny w polu niżej.</h3>
+    <form method="get" action="{% url 'search_results' %}">
+    <input type="text" name="nr_ewidencyjny" placeholder="Nr ewidencyjny">
+    <button type="submit">Wyszukaj!</button>
+
+</form>
+
+</div>
+{% if results %}
+    <table border="2">
+            {% for stewardesses in results %}
+    <tr>
+        <th>Nr_ewidencyjny</th>
+        <th>Imię</th>
+        <th>Nazwisko</th>
+        <th>Crewlink_id</th>
+        <th>Hasło do Crewlink</th>
+        <th>Hasło domenowe</th>
+    </tr>
+    <tr>
+        <td>{{ stewardesses.nr_ewidencyjny }}</td>
+        <td>{{ stewardesses.imie }}</td>
+        <td>{{ stewardesses.nazwisko }}</td>
+        <td>{{ stewardesses.crewlink_id }}</td>
+        <td>{{ stewardesses.crewlink_password }}</td>
+        <td>{{ stewardesses.LOT_password }}</td>
+    </tr>
+            {% endfor %}
+
+</table>
+
+{% else %}
+    <p>Nie znaleziono wyników</p>
+
+{% endif %}
+
+{% endblock %}
