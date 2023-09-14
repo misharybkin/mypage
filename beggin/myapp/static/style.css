@@ -36,13 +36,15 @@ p {
   font-family: 'Playfair Display SC', serif;
 
 }
-table {
-       width: 100%;
-       border-collapse: collapse; /* Рекомендовано для відображення границь між комірками. */
-       }
 
-th, td {
-       border: 1px solid #ddd; /* Додайте границі для заголовків і комірок. */
-       padding: 8px;
-       text-align: left; /* Вирівнювання тексту по лівому краю. */
-        }
+
+
+
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Мінімальна висота вікна перегляду */
+    margin: 0;
+}
+

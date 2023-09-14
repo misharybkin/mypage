@@ -12,7 +12,7 @@
     <h1>
         Witamy w wygodnej wyszukiwarce stewardess!
     </h1>
-    <h3>Wpisz numer ewidencyjny w polu niżej.</h3>
+    <p>Wpisz numer ewidencyjny w polu niżej.</p>
     <form method="get" action="{% url 'search_results' %}">
     <input type="text" name="nr_ewidencyjny" placeholder="Nr ewidencyjny">
     <button type="submit">Wyszukaj!</button>
@@ -20,7 +20,9 @@
 </form>
 
 </div>
+
 {% if results %}
+
 <div class="container my-5">
     <table style = "width: 100%" border="3">
             {% for stewardesses in results %}
@@ -43,6 +45,7 @@
             {% endfor %}
 
 </table>
+</div>
 </div>
 
 {% else %}
