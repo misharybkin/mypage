@@ -6,7 +6,7 @@ class News(models.Model):
     news_id = models.AutoField(primary_key=True)
     title = models.TextField(max_length=255)
     text = models.TextField(max_length=5000)
-    #image = models.ImageField(upload_to='images/')
+    image = models.ImageField(upload_to='myapp/static/uploaded')
     created_on = models.DateTimeField(auto_now_add=True)
     modified_on = models.DateTimeField(null=True)
     author_id = models.ForeignKey(User, on_delete=models.CASCADE, related_name='news')
