@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+
 # Create your models here.
 class News(models.Model):
     news_id = models.AutoField(primary_key=True)
@@ -10,6 +11,11 @@ class News(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
     modified_on = models.DateTimeField(null=True)
     author_id = models.ForeignKey(User, on_delete=models.CASCADE, related_name='news')
+
+    def __str__(self):
+        return self.title
+    def proper_image(self):
+        return(self.image.url.replace('myapp/', ""))
 
 class Stewardesses(models.Model):
     nr_ewidencyjny = models.TextField(primary_key=True)

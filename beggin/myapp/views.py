@@ -1,13 +1,16 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 # Create your views here.
-from .models import Stewardesses
+from .models import Stewardesses, News
 
 def home(request):
     return render(request, 'home.html')
 
 def main(request):
-    return render(request, 'main.html')
+    artykuly = News.objects.all()[:3]
+    print(artykuly)
+
+    return render(request, 'main.html', {'artykuly':artykuly})
 
 def search_results(request):
     if 'nr_ewidencyjny' in request.GET:

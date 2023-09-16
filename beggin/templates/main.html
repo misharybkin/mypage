@@ -64,40 +64,28 @@
           </div>
     </div>
       <div class="container my-5">
+
           <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-5">
+          {% for news_item in artykuly %}
               <div class="col">
               <div class="card">
-                <img class="card-img-top" src="{% static 'uploaded/unnamed.jpg'%}" alt="Card image cap">
+                  {%if news_item.image %}
+                <img class="card-img-top" src="{{news_item.proper_image}}" alt="Card image cap">
+                  {% endif %}
+
                 <div class="card-body">
-                  <h5 class="card-title">Гра з Удаєм</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                  <h5 class="card-title">{{ news_item.title }}</h5>
+                  <p class="card-text">{{ news_item.text }}</p>
+                  <a href="#" class="btn btn-primary">Czytaj więcej!</a>
                 </div>
               </div>
               </div>
+           {% endfor %}
 
-              <div class="col">
-                <div class="card">
-                  <img class="card-img-top" src="images/logo.png" alt="Card image cap">
-                  <div class="card-body">
-                    <h1 class="card-title"><p>Card title</p></h1>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                  </div>
-                </div>
-                </div>
 
-                <div class="col">
-                    <div class="card">
-                      <img class="card-img-top" src="images/logo.png" alt="Card image cap">
-                      <div class="card-body">
-                        <h5 class="card-title"><p>Card title</p></h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                      </div>
-                    </div>
-              </div>
           </div>
+
+
         </div>
 
 {% endblock %}
