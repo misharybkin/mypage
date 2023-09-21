@@ -20,3 +20,6 @@ def search_results(request):
         results = []
 
     return render(request, 'home.html', {'results': results})
+
+def login(request):
+    return render(request, 'login.html')
